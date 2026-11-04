@@ -50,7 +50,7 @@ class GumpUi:
         print("GUMP interactive mode. Type a request and press Enter; Ctrl-D or 'exit' to exit.")
 
         while self.running:
-            command=self.get_sentence("GUMP >")
+            command=self.get_sentence("GUMP > ")
             if command is None:
                 break
             self.handle_start(command)
@@ -63,5 +63,5 @@ class GumpUi:
             self.running=False
             print("bye Nigga....")
         else:
-            agent.agent_loop()
+            agent.agent_loop(command)
         

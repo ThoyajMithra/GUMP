@@ -1,9 +1,9 @@
-import laya
+from gump.engine.laya.laya_engine import layaDecEng
 
 class Agent:
     def __init__(self):
-        pass
+        self.engine=layaDecEng()
 
-    def agent_loop(self):
-        print("loop started")
+    def agent_loop(self,state,question=None):
+        self.engine.decide(state)
 
