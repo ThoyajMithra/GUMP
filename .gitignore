@@ -13,3 +13,6 @@ wheels/
 runs/ 
 .ipynb_checkpoints/
 .python-version
+
+# tests
+tests/

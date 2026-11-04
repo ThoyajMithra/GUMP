@@ -1,13 +1,14 @@
-# app/main.py
-def main():
-    print("broo this is a start")
+import sys
 
-'''
-| Tool | Best suited for |
-|---|---|
-| `argparse` | Simple CLIs; included with Python |
-| [Typer](https://typer.tiangolo.com/?utm_source=chatgpt.com) | Modern CLIs using Python type hints |
-| [Click](https://click.palletsprojects.com/?utm_source=chatgpt.com) | Flexible, structured command-line applications |
-| [Rich](https://rich.readthedocs.io/?utm_source=chatgpt.com) | Rich terminal output, tables, progress bars, and formatting |
-| [Textual](https://textual.textualize.io/?utm_source=chatgpt.com) | Interactive terminal user interfaces (TUIs) |
-'''
+from gump.ui.cli import GumpUi
+
+def main():
+    if len(sys.argv)>1 and sys.argv[1] in ["--version","-v"]:
+        from importlib.metadata import version
+        print(f"GUMP {version('gump')}")
+        return
+    entry=GumpUi()
+    entry.start_gump()
+
+if __name__=="__main__":
+    main()
