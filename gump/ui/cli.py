@@ -47,7 +47,9 @@ class GumpUi:
 
         return "".join(sentence)
     def start_gump(self):
-        print("GUMP interactive mode. Type a request and press Enter; Ctrl-D or 'exit' to exit.")
+        print('--'*30)
+        print("GUMP CLI ; Ctrl-D or 'exit' to exit.")
+        print('--'*30)
 
         while self.running:
             command=self.get_sentence("GUMP > ")
@@ -57,6 +59,7 @@ class GumpUi:
 
     def handle_start(self,command):
         agent=Agent()
+        agent.agent_files()
         if command=="help":
             print("bro you are on you'er own")
         elif command=="exit":

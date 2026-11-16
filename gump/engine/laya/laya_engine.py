@@ -14,6 +14,3 @@ class layaDecEng(DecisionEngine):
             question=laya.triage_questions()
         res=self.router.predict(state,question)
         print(json.dumps(res,indent=4))
-
-
-
