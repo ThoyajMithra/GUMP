@@ -57,13 +57,6 @@ def write_initial(state_path: Path, board_path: Path, agents_path: Path) -> None
                 acceptance=["pytest test_app.py::test_signup_rejects_short_password"],
                 priority=2
             ),
-            Task(
-                id="T-002",
-                goal="document the new /signup contract",
-                owner="builder",
-                acceptance=["docs/api.md mentions /signup constraints"],
-                priority=1
-            ),
         ]
         board_path.write_text(json.dumps([asdict(t) for t in board], indent=2) + "\n")
 

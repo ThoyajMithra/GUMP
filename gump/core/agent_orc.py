@@ -9,4 +9,16 @@ class Agent:
         make_files()
 
     def agent_loop(self,state,question=None):
-        self.engine.decide(state)
+        question= {
+            "Request_Type" : {
+                "type" : "choice",
+                "instructions" : "what is the user requesting?",
+                "criteria" : {
+                    "Explanation" : "asking to explain something",
+                    "Bug Fix" : "requesting to fix something",
+                    "others" : "unsure of what the request is"
+                }
+            }
+        }
+
+        self.engine.decide(state,question)
